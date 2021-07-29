@@ -19,5 +19,20 @@ public class ShellSort {
         Scanner stdIn = new Scanner(System.in);
 
         System.out.println("셸 정렬(버전1)");
+        System.out.println("요솟수 : ");
+        int nx = stdIn.nextInt();
+        int[] x = new int[nx];
+
+        for (int i = 0; i < nx; i++) {
+            System.out.print("x[" + i + "]: ");
+            x[i] = stdIn.nextInt();
+        }
+
+        shellSort(x, nx);
+
+        System.out.println("오름차순으로 정렬했습니다.");
+        for (int i = 0; i < nx; i++) {
+            System.out.println("x[" + i + "]=" + x[i]);
+        }
     }
 }

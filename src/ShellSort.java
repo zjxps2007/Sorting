@@ -28,7 +28,7 @@ public class ShellSort {
             x[i] = stdIn.nextInt();
         }
 
-        shellSort(x, nx);
+        shellSort(x, nx);  //배열 x를 셸 정렬
 
         System.out.println("오름차순으로 정렬했습니다.");
         for (int i = 0; i < nx; i++) {

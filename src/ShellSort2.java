@@ -14,7 +14,7 @@ public class ShellSort2 {
                 for (j = i - h; j >= 0 && a[j] > tmp; j-= h) {
                     a[j + h] = a[j];
                 }
-                a[j + i] = tmp;
+                a[j + h] = tmp;
             }
         }
     }

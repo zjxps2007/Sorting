@@ -11,9 +11,17 @@ public class QuickSort {
 
     //퀵정렬
     static void quicksort(int[] a, int left, int right) {
-        int pl = left;
-        int pr = right;
-        int x = a[(pl + pr)/2];
+        int pl = left;  //왼쪽 커서
+        int pr = right; //오른쪽 커서
+        int x = a[(pl + pr)/2]; //피벗
+
+        //배열 분할
+        System.out.printf("a[%d]~a[%d] : {", left,right);
+        for (int i = left; i < right; i++) {
+            System.out.printf("%d ,", a[i]);
+        }
+        System.out.printf("%d}\n", a[right]);
+        //
 
         do {
             while (a[pl] < x) {

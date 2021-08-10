@@ -15,11 +15,11 @@ public class QuickSort2 {
         IntStack rstack = new IntStack(right - left + 1);
 
         lstack.push(left);
-        lstack.push(right);
+        rstack.push(right);
 
         while (!lstack.isEmpty()) {
-            int pl = left = lstack.pop();
-            int pr = right = lstack.pop();
+            int pl = left = lstack.pop(); //윈쪽 커서
+            int pr = right = lstack.pop(); //오른쪽 커서
             int x = a[(left + right / 2)];
 
             do {

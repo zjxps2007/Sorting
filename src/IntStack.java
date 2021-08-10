@@ -10,8 +10,8 @@ public class IntStack {
     }
 
     //실행 시 예외 : 스택이 가득 참
-    public class OverflowIntStackExeption extends RuntimeException {
-        public OverflowIntStackExeption() {
+    public class OverflowIntStackException extends RuntimeException {
+        public OverflowIntStackException() {
         }
     }
 
@@ -27,19 +27,19 @@ public class IntStack {
     }
 
     //스택에 x를 푸시
-    public int push(int x) throws OverflowIntStackExeption {
+    public int push(int x) throws OverflowIntStackException {
         if (ptr >= max) {
-            throw new OverflowIntStackExeption();
+            throw new OverflowIntStackException();
         }
         return stk[ptr++] = x;
     }
 
-    // 스택에서 데이트를 팝(정상에 잇는 데이트를 꺼냄)
+    // 스택에서 데이트를 팝(정상에 잇는 데이터를 꺼냄)
     public int pop() throws EmptyIntStackException {
         if (ptr <= 0) {
             throw new EmptyIntStackException();
         }
-        return  stk[--ptr];
+        return stk[--ptr];
     }
 
     public int peek() throws EmptyIntStackException {

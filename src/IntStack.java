@@ -1,18 +1,21 @@
 public class IntStack {
-    private int max;
-    private int ptr;
-    private int[] stk;
+    private int max; //스택 용량
+    private int ptr; //스택 포인터
+    private int[] stk; // 스택 본체
 
+    //실행 시 예외 : 스택이 비어 있음
     public class EmptyIntStackException extends RuntimeException {
         public EmptyIntStackException() {
         }
     }
 
+    //실행 시 예외 : 스택이 가득 참
     public class OverflowIntStackExeption extends RuntimeException {
         public OverflowIntStackExeption() {
         }
     }
 
+    //생성자
     public IntStack(int capacity) {
         ptr = 0;
         max = capacity;
@@ -23,6 +26,7 @@ public class IntStack {
         }
     }
 
+    //스택에 x를 푸시
     public int push(int x) throws OverflowIntStackExeption {
         if (ptr >= max) {
             throw new OverflowIntStackExeption();
@@ -30,6 +34,7 @@ public class IntStack {
         return stk[ptr++] = x;
     }
 
+    // 스택에서 데이트를 팝(정상에 잇는 데이트를 꺼냄)
     public int pop() throws EmptyIntStackException {
         if (ptr <= 0) {
             throw new EmptyIntStackException();
@@ -44,6 +49,7 @@ public class IntStack {
         return stk[ptr - 1];
     }
 
+    //스택에서 x를 찾아 인덱스(없으면 -1)를 반환
     public int indexOf(int x) {
         for (int i = ptr - 1; i >= 0; i--) {
             if (stk[i] == x) {

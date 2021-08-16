@@ -19,8 +19,8 @@ public class QuickSort2 {
 
         while (!lstack.isEmpty()) {
             int pl = left = lstack.pop(); //윈쪽 커서
-            int pr = right = lstack.pop(); //오른쪽 커서
-            int x = a[(left + right / 2)];
+            int pr = right = rstack.pop(); //오른쪽 커서
+            int x = a[(left + right) / 2];
 
             do {
                 while (a[pl] < x) {

@@ -4,13 +4,13 @@ public class IntStack {
     private int[] stk; // 스택 본체
 
     //실행 시 예외 : 스택이 비어 있음
-    public class EmptyIntStackException extends RuntimeException {
+    public static class EmptyIntStackException extends RuntimeException {
         public EmptyIntStackException() {
         }
     }
 
     //실행 시 예외 : 스택이 가득 참
-    public class OverflowIntStackException extends RuntimeException {
+    public static class OverflowIntStackException extends RuntimeException {
         public OverflowIntStackException() {
         }
     }
@@ -27,11 +27,11 @@ public class IntStack {
     }
 
     //스택에 x를 푸시
-    public int push(int x) throws OverflowIntStackException {
+    public void push(int x) throws OverflowIntStackException {
         if (ptr >= max) {
             throw new OverflowIntStackException();
         }
-        return stk[ptr++] = x;
+        stk[ptr++] = x;
     }
 
     // 스택에서 데이트를 팝(정상에 잇는 데이터를 꺼냄)

@@ -31,11 +31,11 @@ public class MergeSort {
 
     //병합 정렬
     static void mergeSort(int[] a, int n) {
-        buff = new int[n];
+        buff = new int[n];  //작업용 배열을 생성합니다.
 
-        __mergeSort(a, 0, n - 1);
+        __mergeSort(a, 0, n - 1);  //배열전체를 병합 정렬합니다.
 
-        buff = null;
+        buff = null;  // 작업용 배열을 해제 합니다.
     }
 
     public static void main(String[] args) {
@@ -51,7 +51,7 @@ public class MergeSort {
             x[i] = scanner.nextInt();
         }
 
-        mergeSort(x, nx);
+        mergeSort(x, nx);  //배열 x를 병합 정렬합니다.
 
         System.out.println("오름차순으로 정렬했씁니다.");
         for (int i = 0; i < nx; i++) {
